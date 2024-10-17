@@ -33,12 +33,13 @@ export default function Component() {
   ]
 
   return (
-    <div className="flex justify-center w-full ">
+    <div className="flex justify-center w-full  ">
       <Navbar
         isBordered
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
-        className="max-w-[1300px] rounded-lg my-2 bg-blue-600 m-4 text-white"
+        position="static"
+        className="max-w-[1300px] rounded-lg my-2 bg-blue-600 m-4 text-white z-50 fixed"
         classNames={{
           wrapper: "px-4",
         }}
