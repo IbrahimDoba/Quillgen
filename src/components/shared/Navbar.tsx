@@ -20,17 +20,13 @@ import {
 import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
 import { AcmeLogo } from "@/assets/AcmeLogo"
+import { MenuItems } from "@/constants"
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const { theme, setTheme } = useTheme()
 
-  const menuItems = [
-    "Testimonial",
-    "Pricing",
-    "Playground",
-    "Image To Prompt",
-  ]
+
 
   return (
     <div className="flex justify-center w-full  ">
@@ -39,17 +35,18 @@ export default function Component() {
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
         position="static"
-        className="max-w-[1300px] rounded-lg my-2 bg-blue-600 m-4 text-white z-50 fixed"
+        className="max-w-[1300px] rounded-lg my-2 bg-blue-600 m-4  text-white justify-center"
         classNames={{
           wrapper: "px-4",
         }}
       >
+        
         {/* // for small screens */}
         <NavbarContent className="sm:hidden" justify="start">
           <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
         </NavbarContent>
 
-        <NavbarContent className="sm:hidden pr-3 border-white" justify="start">
+        <NavbarContent className="sm:hidden pr-3 border-white"  justify="start">
           <NavbarBrand>
             <AcmeLogo />
             <p className="font-bold text-inherit">QuillGen</p>
@@ -86,7 +83,7 @@ export default function Component() {
           </NavbarItem>
         </NavbarContent>
 
-        <NavbarContent justify="end">
+        <NavbarContent  justify="end">
           <NavbarItem>
             <Button
               isIconOnly
@@ -128,7 +125,7 @@ export default function Component() {
         </NavbarContent>
 
         <NavbarMenu>
-          {menuItems.map((item, index) => (
+          {MenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
                 className="w-full"

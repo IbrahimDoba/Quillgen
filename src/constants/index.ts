@@ -24,3 +24,49 @@ export const Benefits = [
         description: "Your creations are safe with our advanced watermarking technology, ensuring your art remains yours."
     },
 ]
+
+export const MenuItems = [
+    "Testimonial",
+    "Pricing",
+    "Playground",
+    "Image To Prompt",
+  ]
+
+  export const Features = [
+    {
+        id: '1',
+        icon:'/assets/icons/images (1).svg',
+        title: "Text-to-Image Conversion",
+        description: "Simply describe your idea, and our AI will bring it to life with stunning visuals."
+    },
+    {
+        id: '2',
+        icon:'/assets/icons/combine.svg',
+        title: "Remix and Share",
+        description: "Easily remix existing art and share your creations with the world."
+    },
+    {
+        id: '3',
+        icon:'/assets/icons/trending-up-down.svg',
+        title: "Dynamic Expressive Chips",
+        description: "Experiment with various artistic styles and themes to find your perfect expression."
+    },
+    {
+        id: '4',
+        icon:'/assets/icons/file-image.svg',
+        title: "High-Quality Outputs",
+        description: "Generate high-resolution images that stand out with quality and detail."
+    },
+    {
+        id: '5',
+        icon:'/assets/icons/users.svg',
+        title: "Community Support",
+        description: "Get feedback and inspiration from a global community of creators."
+    },
+    {
+        id: '6',
+        icon:'/assets/icons/book-open-check.svg',
+        title: "Ethical AI Practices",
+        description: "We prioritize responsible AI use, ensuring your art is generated ethically."
+    },
+  ]

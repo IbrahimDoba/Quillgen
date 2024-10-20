@@ -5,14 +5,14 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { Button } from "@nextui-org/react";
 import { MagicCard } from "@/components/ui/magic-card";
-import { Benefits } from "@/constants";
+import { Benefits, Features } from "@/constants";
 import Image from "next/image";
 
 const page = () => {
   return (
     <>
       {/* // hero text section */}
-      <MaxWidthWrapper >
+      <MaxWidthWrapper>
         <section className="grid place-items-center py-12 md:py-16 lg:py-32 gap-6">
           <div
             className={cn(
@@ -45,11 +45,11 @@ const page = () => {
           </div>
         </section>
         {/* // slider section */}
-        <section className="bg-white w-full h-[500px] mb-16 opacity-70 flex justify-center items-center text-black md:px-20">
+        <section className="bg-white w-full h-[500px] mb-16 opacity-70 flex justify-center items-center text-black md:px-20 rounded-xl">
           Slider or image carasoul here
         </section>
         {/* // Benefits section */}
-        <section className="flex max-xl:flex-col max-xl:h-auto w-full justify-center items-center  h-[500px] my-16">
+        <section className="flex max-xl:flex-col max-xl:h-auto w-full justify-center items-center  h-[500px] my-24">
           {/* Text Div */}
           <div className="flex flex-1 flex-col justify-start items-start gap-4 text-white pr-8 max-xl:mb-6">
             <h3 className="text-lg font-semibold opacity-60">Benefits</h3>
@@ -78,9 +78,51 @@ const page = () => {
                   <h2 className="text-3xl opacity-20">{benefit._id}</h2>
                 </div>
                 <div className="text-start">
-                  <h3 className="mt-4 text-2xl font-semibold ">{benefit.title}</h3>
-                  <p className="mt-2 text-gray-400 text-md  text-muted-foreground">{benefit.description}</p>
+                  <h3 className="mt-4 text-2xl font-semibold ">
+                    {benefit.title}
+                  </h3>
+                  <p className="mt-2 text-gray-400 text-md  text-muted-foreground">
+                    {benefit.description}
+                  </p>
                 </div>
+              </MagicCard>
+            ))}
+          </div>
+        </section>
+        <section className=" flex w-full flex-col items-center justify-center my-24">
+          <div className="text-white text-center space-y-4 w-[60%]">
+            <h3 className="text-md ">Features</h3>
+            <h1 className="text-3xl font-semibold ">Explore QuillGen Features</h1>
+            <p className="text-xl opacity-75">
+              From intuitive tools to a supportive community, QuillGen has
+              everything you need to create amazing AI Thumbnails.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 ">
+            {Features.map((feature) => (
+              <MagicCard
+                key={feature.id}
+                className="flex flex-col items-center justify-center text-center  border border-gray-800  p-6 bg-black rounded-lg shadow-lg"
+                gradientColor="#1F2937" // Optional gradient color
+              >
+                {/* Icon with border */}
+                <div className="relative  flex justify-center items-center mb-4">
+               
+                  <div className="relative w-16 h-16 p-4 border-4 border-gray-800 rounded-full flex items-center justify-center bg-gray-900">
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      width={30}
+                      height={30}
+                    />
+                  </div>
+                </div>
+                {/* Title */}
+                <h3 className="mt-4 text-xl font-bold text-white">
+                  {feature.title}
+                </h3>
+                {/* Description */}
+                <p className="mt-2 text-gray-400">{feature.description}</p>
               </MagicCard>
             ))}
           </div>
