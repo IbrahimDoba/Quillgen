@@ -21,6 +21,7 @@ import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react"
 import { AcmeLogo } from "@/assets/AcmeLogo"
 import { MenuItems } from "@/constants"
+import Image from "next/image"
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
@@ -49,14 +50,14 @@ export default function Component() {
         <NavbarContent className="sm:hidden pr-3 border-white"  justify="start">
           <NavbarBrand>
             <AcmeLogo />
-            <p className="font-bold text-inherit">QuillGen</p>
+            <p className="font-bold text-inherit">ThumbForgeAi</p>
           </NavbarBrand>
 
         </NavbarContent>
         {/* // for large screen */}
         <NavbarBrand>
-            <AcmeLogo />
-            <p className="font-bold text-inherit">QuillGen</p>
+            <Image src='/assets/svg/no bg logo.svg' alt="logo" width={30} height={30}/>
+            <p className="font-bold text-inherit ml-5">ThumbForgeAi</p>
           </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-4" justify="end">
           
@@ -143,20 +144,3 @@ export default function Component() {
   )
 }
 
-// function Logo() {
-//   return (
-//     <svg
-//       fill="none"
-//       height="36"
-//       viewBox="0 0 32 32"
-//       width="36"
-//     >
-//       <path
-//         clipRule="evenodd"
-//         d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-//         fill="currentColor"
-//         fillRule="evenodd"
-//       />
-//     </svg>
-//   )
-// }
